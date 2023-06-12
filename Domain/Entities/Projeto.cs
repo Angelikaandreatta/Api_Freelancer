@@ -9,7 +9,7 @@ namespace Domain.Entities
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public string Valor { get; set; }
-        public string Prazo { get; set; }
+        public DateTime Prazo { get; set; }
         public CategoriaProjeto Categoria { get; set; }
     }
 }
