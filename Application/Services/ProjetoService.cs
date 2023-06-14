@@ -54,7 +54,7 @@ namespace Application.Services
             return ResultService.Ok("Projeto editado com sucesso.");
         }
 
-        public async Task<ResultService<ICollection<Projeto>>> GetByIdContratanteAsync(int idContratante)
+        public async Task<ResultService<ICollection<Projeto>>> GetByIdContratanteAsync(string idContratante)
         {
             var projeto = await _projetoRepository.GetByIdContratanteAsync(idContratante);
 

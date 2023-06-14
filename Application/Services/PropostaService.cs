@@ -54,9 +54,9 @@ namespace Application.Services
             return ResultService.Ok("Proposta editada com sucesso.");
         }
 
-        public async Task<ResultService<ICollection<Proposta>>> GetByIdContratadoAsync(int idContratante)
+        public async Task<ResultService<ICollection<Proposta>>> GetByIdContratadoAsync(string idContratado)
         {
-            var proposta = await _propostaRepository.GetByIdContratadoAsync(idContratante);
+            var proposta = await _propostaRepository.GetByIdContratadoAsync(idContratado);
 
             if (proposta == null)
                 return ResultService.Fail<ICollection<Proposta>>("Não existe nenhuma proposta com este contratado.");

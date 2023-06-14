@@ -4,7 +4,7 @@ namespace Domain.Repositories
 {
     public interface IContratadoRepository
     {
-        Task<Contratado> GetByIdAsync(int id);
+        Task<Contratado> GetByIdAsync(string id);
         Task<Contratado> GetByLogin(string email, string senha);
         Task<Contratado> CreateAsync(Contratado contratado);
         Task EditAsync(Contratado contratado);

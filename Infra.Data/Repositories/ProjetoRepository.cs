@@ -44,7 +44,7 @@ namespace Infra.Data.Repositories
             return await _db.Projetos.ToListAsync();
         }
 
-        public async Task<ICollection<Projeto>> GetByIdContratanteAsync(int idContratante)
+        public async Task<ICollection<Projeto>> GetByIdContratanteAsync(string idContratante)
         {
             var list = _db.Projetos.Where(x => x.IdContratante == idContratante);
             return await list.ToListAsync();

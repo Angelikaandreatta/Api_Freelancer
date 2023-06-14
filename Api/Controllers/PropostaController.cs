@@ -72,7 +72,7 @@ namespace Api.Controllers
 
         [HttpGet]
         [Route("{idContratado}/GetByIdContratado")]
-        public async Task<ActionResult> GetByIdContratadoAsync(int idContratado)
+        public async Task<ActionResult> GetByIdContratadoAsync(string idContratado)
         {
             var result = await _propostaService.GetByIdContratadoAsync(idContratado);
 

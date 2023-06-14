@@ -27,7 +27,7 @@ namespace Api.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public async Task<ActionResult> GetByIdAsync(int id)
+        public async Task<ActionResult> GetByIdAsync(string id)
         {
             var result = await _contratanteService.GetByIdAsync(id);
 
@@ -49,7 +49,7 @@ namespace Api.Controllers
 
         [HttpDelete]
         [Route("{id}")]
-        public async Task<ActionResult> DeleteAsync(int id)
+        public async Task<ActionResult> DeleteAsync(string id)
         {
             var result = await _contratanteService.DeleteAsync(id);
             if (result.IsSuccess)

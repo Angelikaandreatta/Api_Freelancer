@@ -4,8 +4,8 @@ namespace Domain.Entities
 {
     public class Projeto : Base
     {
-        public int IdContratante { get; set; }
-        public int IdContratado { get; set; }
+        public string IdContratante { get; set; }
+        public string IdContratado { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public string Valor { get; set; }

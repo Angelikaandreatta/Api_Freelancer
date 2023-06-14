@@ -23,7 +23,7 @@ namespace Application.Services
             return ResultService.Ok(data);
         }
 
-        public async Task<ResultService> DeleteAsync(int id)
+        public async Task<ResultService> DeleteAsync(string id)
         {
             var contratado = await _contratadoRepository.GetByIdAsync(id);
 
@@ -34,7 +34,7 @@ namespace Application.Services
             return ResultService.Ok("Contratado deletado com sucesso.");
         }
 
-        public async Task<ResultService<Contratado>> GetByIdAsync(int id)
+        public async Task<ResultService<Contratado>> GetByIdAsync(string id)
         {
             var contratado = await _contratadoRepository.GetByIdAsync(id);
 

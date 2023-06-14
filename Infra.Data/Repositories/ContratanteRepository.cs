@@ -34,7 +34,7 @@ namespace Infra.Data.Repositories
             await _db.SaveChangesAsync();
         }
 
-        public async Task<Contratante> GetByIdAsync(int id)
+        public async Task<Contratante> GetByIdAsync(string id)
         {
             return await _db.Contratantes.FirstOrDefaultAsync(x => x.Id == id);
         }
