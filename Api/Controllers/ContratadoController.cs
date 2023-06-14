@@ -6,19 +6,19 @@ namespace Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ContratanteController : ControllerBase
+    public class ContratadoController : ControllerBase
     {
-        private readonly IContratanteService _contratanteService;
+        private readonly IContratadoService _contratadoService;
 
-        public ContratanteController(IContratanteService contratanteService)
+        public ContratadoController(IContratadoService contratadoService)
         {
-            _contratanteService = contratanteService;
+            _contratadoService = contratadoService;
         }
 
         [HttpPost]
-        public async Task<ActionResult> CreateAsync([FromBody] Contratante contratante)
+        public async Task<ActionResult> CreateAsync([FromBody] Contratado contratado)
         {
-            var result = await _contratanteService.Create(contratante);
+            var result = await _contratadoService.Create(contratado);
             if (result.IsSuccess)
                 return Ok(result);
 
@@ -29,7 +29,7 @@ namespace Api.Controllers
         [Route("{id}")]
         public async Task<ActionResult> GetByIdAsync(int id)
         {
-            var result = await _contratanteService.GetByIdAsync(id);
+            var result = await _contratadoService.GetByIdAsync(id);
 
             if (result.IsSuccess)
                 return Ok(result);
@@ -38,9 +38,9 @@ namespace Api.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult> UpdateAsync([FromBody] Contratante contratante)
+        public async Task<ActionResult> UpdateAsync([FromBody] Contratado contratado)
         {
-            var result = await _contratanteService.UpdateAsync(contratante);
+            var result = await _contratadoService.UpdateAsync(contratado);
             if (result.IsSuccess)
                 return Ok(result);
 
@@ -51,7 +51,7 @@ namespace Api.Controllers
         [Route("{id}")]
         public async Task<ActionResult> DeleteAsync(int id)
         {
-            var result = await _contratanteService.DeleteAsync(id);
+            var result = await _contratadoService.DeleteAsync(id);
             if (result.IsSuccess)
                 return Ok(result);
 
@@ -59,4 +59,3 @@ namespace Api.Controllers
         }
     }
 }
-

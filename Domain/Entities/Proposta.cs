@@ -6,5 +6,6 @@
         public int IdContratado { get; set; }
         public string Descricao { get; set; }
         public double Valor { get; set; }
+        public DateTime DataEntrega { get; set; }
     }
 }

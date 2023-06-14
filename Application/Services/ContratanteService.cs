@@ -1,7 +1,8 @@
-﻿using Domain.Entities;
+﻿using Application.Services.Interfaces;
+using Domain.Entities;
 using Domain.Repositories;
 
-namespace Application.Services.Interfaces
+namespace Application.Services
 {
     public class ContratanteService : IContratanteService
     {
@@ -19,17 +20,17 @@ namespace Application.Services.Interfaces
 
             var data = await _contratanteRepository.CreateAsync(contratante);
 
-            return ResultService.Ok<Contratante>(data);
+            return ResultService.Ok(data);
         }
 
         public async Task<ResultService> DeleteAsync(int id)
         {
-            var usuario = await _contratanteRepository.GetByIdAsync(id);
+            var contratante = await _contratanteRepository.GetByIdAsync(id);
 
-            if (usuario == null)
+            if (contratante == null)
                 return ResultService.Fail("Contratante não encontrado.");
 
-            await _contratanteRepository.DeleteAsync(usuario);
+            await _contratanteRepository.DeleteAsync(contratante);
             return ResultService.Ok("Contratante deletado com sucesso.");
         }
 
