@@ -33,6 +33,12 @@ namespace Infra.Data.Maps
 
             builder.Property(c => c.Prazo)
                .HasColumnName("Prazo");
+
+            builder.HasOne(c => c.Contratante)
+                .WithOne(p => p.Projeto);
+
+            builder.HasOne(c => c.Contratado)
+                   .WithOne(p => p.Projeto);
         }
     }
 }

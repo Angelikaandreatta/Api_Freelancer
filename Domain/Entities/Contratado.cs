@@ -8,5 +8,7 @@
         public string Descricao { get; set; }
         public string Habilidades { get; set; }
         public string Profissao { get; set; }
+        public IList<Proposta> Proposta { get; set; }
+        public Projeto Projeto { get; set; }
     }
 }

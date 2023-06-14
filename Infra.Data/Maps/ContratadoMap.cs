@@ -32,6 +32,10 @@ namespace Infra.Data.Maps
 
             builder.Property(c => c.Profissao)
                .HasColumnName("Profissao");
+
+            builder.HasOne(c => c.Projeto)
+                   .WithOne(a => a.Contratado)
+                   .HasForeignKey<Contratado>(c => c.Id);
         }
     }
 }

@@ -11,5 +11,8 @@ namespace Domain.Entities
         public string Valor { get; set; }
         public DateTime Prazo { get; set; }
         public CategoriaProjeto Categoria { get; set; }
+        public Contratante Contratante { get; set; }
+        public Contratado Contratado { get; set; }
+        public Proposta Proposta { get; set; }
     }
 }

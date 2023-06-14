@@ -30,6 +30,12 @@ namespace Infra.Data.Maps
 
             builder.Property(c => c.DataEntrega)
                .HasColumnName("DataEntrega");
+
+            builder.HasOne(c => c.Projeto)
+                   .WithOne(p => p.Proposta);
+
+            builder.HasOne(c => c.Contratado)
+                   .WithMany(p => p.Proposta);
         }
     }
 }
