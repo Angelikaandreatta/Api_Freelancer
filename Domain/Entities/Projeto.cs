@@ -8,7 +8,7 @@ namespace Domain.Entities
         public string IdContratado { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
-        public string Valor { get; set; }
+        public decimal Valor { get; set; }
         public DateTime Prazo { get; set; }
         public CategoriaProjeto Categoria { get; set; }
         public Contratante Contratante { get; set; }
