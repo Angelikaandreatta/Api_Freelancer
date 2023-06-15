@@ -1,11 +1,17 @@
-﻿namespace Domain.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
+
+namespace Domain.Entities
 {
-    public class Contratante : Base
+    [NotMapped]
+    public class Contratante
     {
         public string Id { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
-        public Projeto Projeto { get; set; }
+
+        [JsonIgnore]
+        public virtual Projeto Projeto { get; set; }
     }
 }

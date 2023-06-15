@@ -26,7 +26,11 @@ namespace Infra.Data.Maps
 
             builder.HasOne(c => c.Projeto)
                    .WithOne(a => a.Contratante)
-                   .HasForeignKey<Contratante>(c => c.Id);
+            .HasForeignKey<Contratante>(c => c.Id);
+
+            builder.HasOne(c => c.Projeto)
+                .WithOne(p => p.Contratante)
+                .HasForeignKey<Projeto>(p => p.IdContratante);
         }
     }
 }

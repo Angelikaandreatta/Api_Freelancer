@@ -1,4 +1,5 @@
 ﻿using Domain.Enuns;
+using System.Text.Json.Serialization;
 
 namespace Domain.Entities
 {
@@ -11,8 +12,11 @@ namespace Domain.Entities
         public decimal Valor { get; set; }
         public DateTime Prazo { get; set; }
         public CategoriaProjeto Categoria { get; set; }
-        public Contratante Contratante { get; set; }
-        public Contratado Contratado { get; set; }
-        public Proposta Proposta { get; set; }
+
+        [JsonIgnore]
+        public virtual Contratante Contratante { get; set; }
+
+        [JsonIgnore]
+        public virtual Contratado Contratado { get; set; }
     }
 }

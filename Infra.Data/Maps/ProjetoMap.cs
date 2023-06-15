@@ -34,11 +34,14 @@ namespace Infra.Data.Maps
             builder.Property(c => c.Prazo)
                .HasColumnName("Prazo");
 
-            builder.HasOne(c => c.Contratante)
-                .WithOne(p => p.Projeto);
+            builder.HasOne(p => p.Contratante)
+                   .WithOne()
+                   .HasForeignKey<Projeto>(p => p.IdContratante);
 
-            builder.HasOne(c => c.Contratado)
-                   .WithOne(p => p.Projeto);
+            builder.HasOne(e => e.Contratado)
+               .WithOne()
+               .HasForeignKey<Projeto>(e => e.IdContratado)
+               .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

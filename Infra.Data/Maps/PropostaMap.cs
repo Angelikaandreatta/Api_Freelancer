@@ -31,11 +31,13 @@ namespace Infra.Data.Maps
             builder.Property(c => c.DataEntrega)
                .HasColumnName("DataEntrega");
 
-            builder.HasOne(c => c.Projeto)
-                   .WithOne(p => p.Proposta);
+            builder.HasOne(p => p.Projeto)
+                      .WithMany()
+                      .HasForeignKey(p => p.IdProjeto);
 
-            builder.HasOne(c => c.Contratado)
-                   .WithMany(p => p.Proposta);
+            builder.HasOne(p => p.Contratado)
+                .WithMany()
+                .HasForeignKey(p => p.IdContratado);
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Domain.Entities
+﻿using System.Text.Json.Serialization;
+
+namespace Domain.Entities
 {
     public class Proposta : Base
     {
@@ -7,7 +9,10 @@
         public string Descricao { get; set; }
         public decimal Valor { get; set; }
         public DateTime DataEntrega { get; set; }
-        public Projeto Projeto { get; set; }
-        public Contratado Contratado { get; set; }
+
+        [JsonIgnore]
+        public virtual Projeto Projeto { get; set; }
+        [JsonIgnore]
+        public virtual Contratado Contratado { get; set; }
     }
 }
